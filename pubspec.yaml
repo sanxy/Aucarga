@@ -1,0 +1,74 @@
+name: etcetera
+description: "Aucarga"
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+  stacked: ^3.2.2
+  stacked_hooks: ^0.2.3
+  stacked_services: ^1.0.2
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  observable_ish: ^4.0.3
+  logger: ^1.1.0
+#  encrypt: ^5.0.0
+  loading_overlay: ^0.3.0
+  flutter_svg: ^1.0.3
+  flare_flutter: ^3.0.2
+  mockito: ^5.0.0
+  loading_animation_widget: ^1.2.0+2
+  flutter_onboarding_slider: ^1.0.9
+  fluttertoast: ^8.2.4
+  pinput: ^2.2.31
+
+  intro_slider: ^3.0.0
+  flutter_hooks: ^0.18.0
+  http: ^1.2.1
+  flash: ^3.0.0
+  intl_phone_number_input: ^0.7.4
+  timer_count_down: ^2.2.1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+  icons_launcher: ^2.1.0
+
+icons_launcher:
+  image_path: 'assets/logos/app_icon.jpeg'
+  #  adaptive_round_image: "assets/images/app_icon.jpg"
+  adaptive_background_color: "#003399"
+
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true
+
+flutter:
+    uses-material-design: true
+
+
+    assets:
+      - assets/
+      - assets/ca/
+      - assets/icons/
+      - assets/logos/
+
+    fonts:
+      - family: CeraPro
+        fonts:
+          - asset: assets/fonts/CeraPro/CeraPro-Thin.ttf
+      - family: sora
+        fonts:
+          - asset: assets/fonts/sora/Sora-Regular.ttf
