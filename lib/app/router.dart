@@ -33,13 +33,13 @@ class Routers {
             builder: (context) => const Login(), settings: settings);
       case Routes.onboardingViewRoute:
         return CupertinoPageRoute<dynamic>(
-            builder: (context) => Onboarding(), settings: settings);
+            builder: (context) => const Onboarding(), settings: settings);
       case Routes.startupViewRoute:
         return CupertinoPageRoute<dynamic>(
-            builder: (context) => StartUpScreen(), settings: settings);
+            builder: (context) => const StartUpScreen(), settings: settings);
       case Routes.phoneViewRoute:
         return CupertinoPageRoute<dynamic>(
-            builder: (context) => PhoneView(), settings: settings);
+            builder: (context) => const PhoneView(), settings: settings);
 
     case Routes.verifyPhoneViewRoute:
       String phoneNumber = settings.arguments as String;

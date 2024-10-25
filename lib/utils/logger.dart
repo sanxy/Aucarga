@@ -19,13 +19,13 @@ void setupLogger({bool test = false}) {
   // }
 }
 
-class _MockClient extends Mock implements _LoggerClient {
+class _MockClient extends Mock implements LoggerClient {
   @override
   void log({LogLevel? level, String? message, e, StackTrace? s}) {}
 }
 
 class Logger {
-  static late _LoggerClient _client;
+  static late LoggerClient _client;
 
   /// Debug level logs
   static void d(
@@ -71,14 +71,14 @@ class Logger {
     );
   }
 
-  static void useClient(_LoggerClient client) {
+  static void useClient(LoggerClient client) {
     _client = client;
   }
 }
 
 enum LogLevel { debug, warning, error }
 
-abstract class _LoggerClient {
+abstract class LoggerClient {
   void log({
     LogLevel? level,
     String? message,
@@ -88,7 +88,7 @@ abstract class _LoggerClient {
 }
 
 /// Debug logger that just prints to console
-class _DebugLoggerClient implements _LoggerClient {
+class _DebugLoggerClient implements LoggerClient {
   final debug_logger.Logger _logger = debug_logger_util.getLogger();
 
   @override

@@ -4,14 +4,14 @@ import 'package:stacked/stacked.dart';
 
 import '../../app/locator.dart';
 
-class StorageService with ReactiveServiceMixin {
-  final HiveInterface? _hiveService = locator<HiveInterface>();
+class StorageService with ListenableServiceMixin {
+  final HiveInterface _hiveService = locator<HiveInterface>();
   
-  bool get _isBoolBoxOpen => _hiveService!.isBoxOpen(HiveBox.bools);
-  Box<bool> get _boolBox => _hiveService!.box<bool>(HiveBox.bools);
+  bool get _isBoolBoxOpen => _hiveService.isBoxOpen(HiveBox.bools);
+  Box<bool> get _boolBox => _hiveService.box<bool>(HiveBox.bools);
 
-  bool get _isStringBoxOpen => _hiveService!.isBoxOpen(HiveBox.strings);
-  Box<String> get _stringsBox => _hiveService!.box<String>(HiveBox.strings);
+  bool get _isStringBoxOpen => _hiveService.isBoxOpen(HiveBox.strings);
+  Box<String> get _stringsBox => _hiveService.box<String>(HiveBox.strings);
   
   StorageService() {
     listenToReactiveValues([]);
@@ -19,10 +19,10 @@ class StorageService with ReactiveServiceMixin {
   
   Future<void> init() async {
     if (!_isBoolBoxOpen) {
-      await _hiveService!.openBox<bool>(HiveBox.bools);
+      await _hiveService.openBox<bool>(HiveBox.bools);
     }
     if (!_isStringBoxOpen) {
-      await _hiveService!.openBox<String>(HiveBox.strings);
+      await _hiveService.openBox<String>(HiveBox.strings);
     }
   }
 

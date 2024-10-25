@@ -24,21 +24,19 @@ class DashboardView extends StatelessWidget {
                 child: Column(
                   children: [
                     const SizedBox(height: 100),
-                    Container(
-                      child:  Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'user profile',
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                              color: MyColors.darkBackgroundColor,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w800,
-                            ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'user profile',
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                            color: MyColors.darkBackgroundColor,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w800,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                     Text(
                       'email: ${model.email}',

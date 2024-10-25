@@ -7,11 +7,13 @@ import '../../utils/my_colors.dart';
 
 
 class StartUpScreen extends StatelessWidget {
+  const StartUpScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
 
     return ViewModelBuilder<StartUpScreenViewModel>.reactive(
-        onModelReady: (model) => model.setup(),
+        onViewModelReady: (model) => model.setup(),
         viewModelBuilder: () => StartUpScreenViewModel(),
         builder: (context, model, child) => Material(
             child: Scaffold(

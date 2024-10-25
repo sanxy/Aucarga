@@ -11,9 +11,9 @@ import '../../../utils/my_colors.dart';
 
 
 class VerifyPhoneView extends StatelessWidget {
-  String phone;
+  final String phone;
 
-  VerifyPhoneView({super.key, required this.phone});
+  const VerifyPhoneView({super.key, required this.phone});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class VerifyPhoneView extends StatelessWidget {
 
                             const SizedBox(height: 10),
                             Text(
-                              'Please enter the code sent to ${phone}',
+                              'Please enter the code sent to $phone',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: MyColors.darkBackgroundColor,
@@ -75,7 +75,7 @@ class VerifyPhoneView extends StatelessWidget {
                                 defaultPinTheme: PinTheme(
                                   width: 65,
                                   height: 60,
-                                  textStyle:  TextStyle(fontSize: 28, color: Colors.black, fontWeight: FontWeight.w700),
+                                  textStyle:  const TextStyle(fontSize: 28, color: Colors.black, fontWeight: FontWeight.w700),
                                   decoration: BoxDecoration(
                                       color:  const Color(0xFFF1F5F9),
                                       borderRadius: BorderRadius.circular(4),
@@ -85,7 +85,7 @@ class VerifyPhoneView extends StatelessWidget {
                                 submittedPinTheme: PinTheme(
                                   width: 65,
                                   height: 60,
-                                  textStyle:  TextStyle(fontSize: 28, color: Colors.black, fontWeight: FontWeight.w700),
+                                  textStyle:  const TextStyle(fontSize: 28, color: Colors.black, fontWeight: FontWeight.w700),
                                   decoration: BoxDecoration(
                                       color:  MyColors.bluePrimary.withOpacity(0.1),
                                       borderRadius: BorderRadius.circular(4),
@@ -95,7 +95,7 @@ class VerifyPhoneView extends StatelessWidget {
                                 focusedPinTheme: PinTheme(
                                   width: 65,
                                   height: 60,
-                                  textStyle:  TextStyle(fontSize: 28, color: Colors.black, fontWeight: FontWeight.w700),
+                                  textStyle:  const TextStyle(fontSize: 28, color: Colors.black, fontWeight: FontWeight.w700),
                                   decoration: BoxDecoration(
                                       color: MyColors.bluePrimary.withOpacity(0.1),
                                       borderRadius: BorderRadius.circular(4),

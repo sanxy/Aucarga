@@ -24,7 +24,7 @@ class AccountDoneView extends StatelessWidget {
                 children: [
                   // Centered View
                   Center(
-                    child: Container(
+                    child: SizedBox(
 
                       height: 300,
                       child: Center(

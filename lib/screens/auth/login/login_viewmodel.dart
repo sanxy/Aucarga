@@ -9,15 +9,15 @@ import '../../../api/apis.dart';
 import '../../../app/locator.dart';
 import '../../../app/router.dart';
 import '../../../core/constants/strings.dart';
-import '../../../core/enums/toast_mesage.dart';
 import '../../../core/model/login_model.dart';
 import '../../../core/services/utility_storage_service.dart';
-import '../../../utils/toast.dart';
+import '../../../utils/toast_service.dart';
 
 
 
 class LoginViewModel extends ReactiveViewModel {
   final NavigationService _navigationService = locator<NavigationService>();
+  final toastService = locator<ToastService>();
 
   final formKey = GlobalKey<FormState>();
   final RegExp emailRegex = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_'{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
@@ -74,23 +74,36 @@ class LoginViewModel extends ReactiveViewModel {
         Future.delayed(const Duration(milliseconds: 210),
                 () => _navigationService.replaceWith(Routes.dashboardViewRoute));
 
-
       }
       //failure
      else {
         isLoading = false;
         notifyListeners();
-        showToast(context: context, message: message ?? AppStrings.unknownError, messageType: ToastMessageType.error);
+
+        toastService.showToast(
+          message: message ?? AppStrings.unknownError,
+          messageType: ToastMessageType.success,
+        );
         // dPrint('error ${response.body}');
       }
     } on SocketException {
       isLoading = false;
       notifyListeners();
-      showToast(context: context, message: AppStrings.internetError, messageType: ToastMessageType.error);
+
+      toastService.showToast(
+        message: AppStrings.internetError,
+        messageType: ToastMessageType.success,
+      );
+
     }  catch (e) {
       isLoading = false;
       notifyListeners();
-      showToast(context: context, message: AppStrings.unknownError, messageType: ToastMessageType.error);
+
+      toastService.showToast(
+        message:AppStrings.unknownError,
+        messageType: ToastMessageType.success,
+      );
+
       // dPrint("Error received during login: ${e.toString()}");
     }
   }

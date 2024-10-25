@@ -7,10 +7,10 @@ class AnimatedLogo extends StatefulWidget {
   const AnimatedLogo({super.key});
 
   @override
-  _AnimatedLogoState createState() => _AnimatedLogoState();
+  AnimatedLogoState createState() => AnimatedLogoState();
 }
 
-class _AnimatedLogoState extends State<AnimatedLogo> with SingleTickerProviderStateMixin {
+class AnimatedLogoState extends State<AnimatedLogo> with SingleTickerProviderStateMixin {
   AnimationController? _controller;
   Animation<double>? _animation;
 

@@ -1,5 +1,4 @@
 import 'package:etcetera/utils/tools.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyColors {

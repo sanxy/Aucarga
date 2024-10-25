@@ -56,7 +56,4 @@ class OnboardingViewModel extends ReactiveViewModel {
     notifyListeners();
   }
 
-  @override
-  List<ReactiveServiceMixin> get reactiveServices => [];
-
 }

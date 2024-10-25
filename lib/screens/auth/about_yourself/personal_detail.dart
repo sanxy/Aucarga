@@ -172,7 +172,7 @@ class PersonalDetail extends StatelessWidget {
                                   showModalBottomSheet(
                                     context: context,
                                     builder: (BuildContext context) {
-                                      return BottomSheetContent();
+                                      return const BottomSheetContent();
                                     },
                                   );
                                   // }
@@ -202,11 +202,14 @@ class PersonalDetail extends StatelessWidget {
 
 
 class BottomSheetContent extends StatefulWidget {
+  const BottomSheetContent({super.key});
+
+
   @override
-  _BottomSheetContentState createState() => _BottomSheetContentState();
+  BottomSheetContentState createState() => BottomSheetContentState();
 }
 
-class _BottomSheetContentState extends State<BottomSheetContent> {
+class BottomSheetContentState extends State<BottomSheetContent> {
   bool _agree = false;
 
   @override

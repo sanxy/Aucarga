@@ -77,19 +77,19 @@ class PhoneView extends StatelessWidget {
                               onInputValidated: (bool value) {
                                 // print(value);
                               },
-                              selectorConfig: SelectorConfig(
+                              selectorConfig: const SelectorConfig(
                                 selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
                                 useBottomSheetSafeArea: true,
                               ),
                               ignoreBlank: false,
                               autoValidateMode: AutovalidateMode.disabled,
-                              selectorTextStyle: TextStyle(color: Colors.black),
+                              selectorTextStyle: const TextStyle(color: Colors.black),
                               initialValue: model.number,
                               textFieldController: model.controller,
                               formatInput: true,
                               keyboardType:
-                              TextInputType.numberWithOptions(signed: true, decimal: true),
-                              inputBorder: OutlineInputBorder(),
+                              const TextInputType.numberWithOptions(signed: true, decimal: true),
+                              inputBorder: const OutlineInputBorder(),
                               onSaved: (PhoneNumber number) {
                                 // print('On Saved: $number');
                               },

@@ -9,22 +9,20 @@ class Onboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   final double height = MediaQuery.of(context).size.height;
-    final double width = MediaQuery.of(context).size.width;
 
     return ViewModelBuilder<OnboardingViewModel>.reactive(
-        onModelReady: (model) => model.setup(),
+        onViewModelReady: (model) => model.setup(),
         viewModelBuilder: () => OnboardingViewModel(),
         builder: (context, model, child) => Material(
                 child: Scaffold(
               backgroundColor: MyColors.backgroundColor,
               body: Container(
-                padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Indicator
-                    SizedBox(height: 100,),
+                    const SizedBox(height: 100,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: List.generate(
@@ -33,12 +31,12 @@ class Onboarding extends StatelessWidget {
                           onTap: () {
                             model.pageController.animateToPage(
                               index,
-                              duration: Duration(milliseconds: 500),
+                              duration: const Duration(milliseconds: 500),
                               curve: Curves.ease,
                             );
                           },
                           child: Container(
-                            margin: EdgeInsets.all(8.0),
+                            margin: const EdgeInsets.all(8.0),
                             width: 30.0,
                             height: 5.0,
                             decoration: BoxDecoration(
@@ -52,12 +50,12 @@ class Onboarding extends StatelessWidget {
                     // Header Text
                     Text(
                       model.headers[ model.currentIndex],
-                      style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
                     ),
                     // Body Text
                     Text(
                       model.bodies[ model.currentIndex],
-                      style: TextStyle(fontSize: 18.0),
+                      style: const TextStyle(fontSize: 18.0),
                       textAlign: TextAlign.center,
                     ),
                     // Image
@@ -91,7 +89,7 @@ class Onboarding extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: 100,),
+                    const SizedBox(height: 100,),
                   ],
                 ),
               ),

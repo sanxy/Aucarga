@@ -37,6 +37,8 @@ dependencies:
   timer_count_down: ^2.2.1
 
 
+  get_it: any
+  path_provider: any
 dev_dependencies:
   flutter_test:
     sdk: flutter

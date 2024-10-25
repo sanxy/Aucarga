@@ -1,5 +1,4 @@
 import 'package:etcetera/utils/my_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -23,7 +22,7 @@ class BuildBtn extends StatelessWidget {
 
 
   const BuildBtn(
-      {Key? key,
+      {super.key,
         required this.title,
         required this.onPressed,
         required this.buttonColor,
@@ -32,8 +31,7 @@ class BuildBtn extends StatelessWidget {
         this.borderColor = Colors.transparent,
         this.iconColor = Colors.white,
         this.showLoadingIcon = false,
-        this.enabled = true})
-      : super(key: key);
+        this.enabled = true});
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +107,7 @@ class BuildTextField extends StatelessWidget {
   final Widget? moreInfoIcon;
 
   const BuildTextField(
-      {Key? key,
+      {super.key,
         this.controller,
         this.onChanged,
         required this.hintText,
@@ -125,8 +123,7 @@ class BuildTextField extends StatelessWidget {
         this.enabled = true,
         this.suffix,
         this.moreInfoIcon,
-        this.maxLength})
-      : super(key: key);
+        this.maxLength});
 
   @override
   Widget build(BuildContext context) {
@@ -143,7 +140,7 @@ class BuildTextField extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(labelText,
-                  style: TextStyle(
+                  style: const TextStyle(
                       color:  Colors.black87,
                       fontSize: 14,
                       fontWeight: FontWeight.w500)),
@@ -229,8 +226,7 @@ class LoadingOverlayWidget extends StatelessWidget {
   final String? loadingText;
   final Widget child;
 
-  const LoadingOverlayWidget({Key? key, required this.isLoading, required this.child,this.loadingText = 'Please wait...'})
-      : super(key: key);
+  const LoadingOverlayWidget({super.key, required this.isLoading, required this.child,this.loadingText = 'Please wait...'});
 
 
   @override
@@ -248,14 +244,14 @@ class LoadingOverlayWidget extends StatelessWidget {
           const SizedBox(height: 15),
           Text(
               loadingText!,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white,
                   fontSize: 13,
                   fontWeight: FontWeight.w400,
                   decoration: TextDecoration.none,
                   fontFamily: 'sora')),
           const SizedBox(height: 8),
-          SizedBox(
+          const SizedBox(
             width: 15,
             height: 15,
             child: CircularProgressIndicator(
@@ -275,8 +271,7 @@ class LoadingOverlayWidget extends StatelessWidget {
 class BackBtn extends StatelessWidget {
 
   final String? title;
-  const BackBtn({Key? key, this.title})
-      : super(key: key);
+  const BackBtn({super.key, this.title});
 
 
   @override
@@ -297,8 +292,8 @@ class BackBtn extends StatelessWidget {
           const SizedBox(width: 6),
           Text(
               title ?? '',
-              style: TextStyle(
-                color: const Color(0xFF1E293B),
+              style: const TextStyle(
+                color: Color(0xFF1E293B),
                 fontSize: 15,
                 fontWeight: FontWeight.w700,
               )
