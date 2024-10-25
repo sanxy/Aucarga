@@ -60,12 +60,12 @@ Future<dynamic> showToast({required String message, required ToastMessageType me
           content: Text(
             message,
             style:
-            TextStyle(fontWeight: FontWeight.w300, fontSize: 14, color:  Colors.white),
+            const TextStyle(fontWeight: FontWeight.w300, fontSize: 14, color:  Colors.white),
           ),
           actions: [
             TextButton(
               onPressed: () => controller.dismiss(true),
-              child: Text(
+              child: const Text(
                 'Okay',
                 style: TextStyle(color: Colors.white ,fontSize: 14),
               ),

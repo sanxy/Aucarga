@@ -5,7 +5,7 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 class LoadingDialog extends StatelessWidget {
   final String title;
 
-  const LoadingDialog(this.title, {Key? key}) : super(key: key);
+  const LoadingDialog(this.title, {super.key});
 
   @override
   Widget build(BuildContext context) {

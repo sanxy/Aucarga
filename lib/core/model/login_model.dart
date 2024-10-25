@@ -10,14 +10,14 @@ class LoginData {
     code = json['code'];
     status = json['status'];
     message = json['message'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['code'] = this.code;
-    data['status'] = this.status;
-    data['message'] = this.message;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['code'] = code;
+    data['status'] = status;
+    data['message'] = message;
     if (this.data != null) {
       data['data'] = this.data!.toJson();
     }
@@ -84,24 +84,24 @@ class Data {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['session_id'] = this.sessionId;
-    data['_id'] = this.sId;
-    data['username'] = this.username;
-    data['first_name'] = this.firstName;
-    data['user_id'] = this.userId;
-    data['password'] = this.password;
-    data['email'] = this.email;
-    data['user_type'] = this.userType;
-    data['is_loggedIn'] = this.isLoggedIn;
-    data['can_post'] = this.canPost;
-    data['is_blocked'] = this.isBlocked;
-    data['is_verified'] = this.isVerified;
-    data['access_token'] = this.accessToken;
-    data['invite_code'] = this.inviteCode;
-    data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
-    data['__v'] = this.iV;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['session_id'] = sessionId;
+    data['_id'] = sId;
+    data['username'] = username;
+    data['first_name'] = firstName;
+    data['user_id'] = userId;
+    data['password'] = password;
+    data['email'] = email;
+    data['user_type'] = userType;
+    data['is_loggedIn'] = isLoggedIn;
+    data['can_post'] = canPost;
+    data['is_blocked'] = isBlocked;
+    data['is_verified'] = isVerified;
+    data['access_token'] = accessToken;
+    data['invite_code'] = inviteCode;
+    data['created_at'] = createdAt;
+    data['updated_at'] = updatedAt;
+    data['__v'] = iV;
     return data;
   }
 }

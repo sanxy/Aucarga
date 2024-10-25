@@ -1,4 +1,3 @@
-// File Paths and constants for flare animations
 class Animations {
   Animations._();
 

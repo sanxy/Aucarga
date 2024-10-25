@@ -84,14 +84,14 @@ PageRoute unknownRoutePage(String? routeName) => CupertinoPageRoute(
                 ),
               ),
               ElevatedButton(
-                child: const Text("Back"),
                 onPressed: () {
                   Navigator.of(ctx).pop();
                 },
                 style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(Colors.transparent),
+                      WidgetStateProperty.all(Colors.transparent),
                 ),
+                child: const Text("Back"),
               )
             ],
           ),

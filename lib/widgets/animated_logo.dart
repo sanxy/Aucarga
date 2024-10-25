@@ -4,8 +4,7 @@ import 'package:flutter_svg/svg.dart';
 
 class AnimatedLogo extends StatefulWidget {
 
-  const AnimatedLogo({Key? key})
-      : super(key: key);
+  const AnimatedLogo({super.key});
 
   @override
   _AnimatedLogoState createState() => _AnimatedLogoState();

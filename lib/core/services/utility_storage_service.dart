@@ -18,8 +18,6 @@ class StorageService with ReactiveServiceMixin {
   }
   
   Future<void> init() async {
-    // _hiveService.registerAdapter(UserAdapter());
-
     if (!_isBoolBoxOpen) {
       await _hiveService!.openBox<bool>(HiveBox.bools);
     }
