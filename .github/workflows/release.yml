@@ -20,6 +20,7 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable"
+          flutter-version: "3.22.0"
       - name: Get dependencies
         run: flutter pub get
       - name: Run analyze
@@ -40,6 +41,7 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable"
+          flutter-version: "3.22.0"
       - name: Get dependencies
         run: flutter pub get
       - name: Clean build

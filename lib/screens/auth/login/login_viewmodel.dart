@@ -34,6 +34,7 @@ class LoginViewModel extends ReactiveViewModel {
 
 
   Future<void> signIn(BuildContext context, {bool withBiometrics = false}) async {
+
     try {
       isLoading = true;
       notifyListeners();
@@ -82,7 +83,7 @@ class LoginViewModel extends ReactiveViewModel {
 
         toastService.showToast(
           message: message ?? AppStrings.unknownError,
-          messageType: ToastMessageType.success,
+          messageType: ToastMessageType.info,
         );
         // dPrint('error ${response.body}');
       }
@@ -92,7 +93,7 @@ class LoginViewModel extends ReactiveViewModel {
 
       toastService.showToast(
         message: AppStrings.internetError,
-        messageType: ToastMessageType.success,
+        messageType: ToastMessageType.error,
       );
 
     }  catch (e) {
@@ -101,7 +102,7 @@ class LoginViewModel extends ReactiveViewModel {
 
       toastService.showToast(
         message:AppStrings.unknownError,
-        messageType: ToastMessageType.success,
+        messageType: ToastMessageType.error,
       );
 
       // dPrint("Error received during login: ${e.toString()}");

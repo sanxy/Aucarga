@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:etcetera/utils/toast_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
@@ -64,6 +65,10 @@ Future<void> setupLocator({bool test = false})async {
   );
   locator.registerLazySingleton<SnackbarService>(
     () => snackBarService,
+  );
+
+  locator.registerLazySingleton<ToastService>(
+        () => ToastService(),
   );
 
   locator.registerLazySingleton<StorageService>(
